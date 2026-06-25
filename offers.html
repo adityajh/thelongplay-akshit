@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#0F3D33;--cream:#E9E2CF;--gold:#B8924A;--ink:#3A3A36;--paper:#F7F4EC;--muted:#6F6A5E;--line:#E2DCCC}
+body{font-family:'Newsreader','Georgia',serif;color:var(--ink);background:#fff;line-height:1.5;font-size:10.4px}
+.head{display:'Work Sans'}
+.page{width:210mm;min-height:297mm;position:relative}
+.head{background:var(--green);color:var(--cream);padding:24px 34px 20px}
+.head .eyebrow{font-family:'Work Sans',sans-serif;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.head h1{font-family:'Spectral',serif;font-size:27px;color:var(--cream);line-height:1.06;font-weight:600}
+.head .tag{font-family:'Newsreader',serif;font-style:italic;color:var(--gold);font-size:12px;margin-top:7px}
+.body{padding:18px 34px 0}
+.intro{font-family:'Newsreader',serif;font-size:11.4px;color:var(--green);line-height:1.45;max-width:74ch;margin-bottom:16px}
+.eyebrow-s{font-family:'Work Sans',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:7px}
+
+.tiers{display:flex;gap:16px;margin-bottom:16px}
+.tier{flex:1;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.tier.full{border-color:var(--gold);border-width:1.6px}
+.tier .top{padding:14px 16px 12px;background:var(--paper)}
+.tier.full .top{background:var(--cream)}
+.tier .name{font-family:'Work Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.tier .badge{font-family:'Work Sans',sans-serif;float:right;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--gold);padding:3px 7px;border-radius:2px}
+.tier .price{font-family:'Spectral',serif;font-size:26px;color:var(--green);font-weight:600;margin-top:8px}
+.tier .price small{font-family:'Newsreader',serif;font-size:11px;color:var(--muted);font-weight:400}
+.tier .found{font-family:'Work Sans',sans-serif;font-size:8.6px;color:var(--gold);font-weight:600;margin-top:3px;letter-spacing:.02em}
+.tier .who{padding:10px 16px;font-size:9.6px;color:var(--muted);border-bottom:1px solid var(--line);min-height:42px}
+.tier ul{list-style:none;padding:10px 16px 14px}
+.tier li{font-size:9.5px;padding:3px 0 3px 15px;position:relative;color:var(--ink)}
+.tier li::before{content:'\2014';position:absolute;left:0;color:var(--gold)}
+.tier li.plus{color:var(--green);font-weight:500}
+
+.row2{display:flex;gap:22px;margin-bottom:14px}
+.addons{flex:1.25}
+.terms{flex:1}
+.alist{margin-top:6px}
+.alist .a{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:9.7px}
+.alist .a:last-child{border:none}
+.alist .a b{font-family:'Work Sans',sans-serif;color:var(--green);font-weight:600;white-space:nowrap}
+.alist .a span{color:var(--muted)}
+.tbox{background:var(--paper);border-radius:4px;padding:13px 16px}
+.tbox .t{display:flex;justify-content:space-between;padding:5px 0;font-size:9.7px;border-bottom:1px solid var(--line)}
+.tbox .t:last-child{border:none}
+.tbox .t b{font-family:'Work Sans',sans-serif;color:var(--green);font-weight:600}
+
+.note{font-size:9.2px;color:var(--muted);font-style:italic;line-height:1.5;border-left:2px solid var(--gold);padding:2px 0 2px 12px;margin-bottom:14px;max-width:80ch}
+
+.cta{background:var(--green);color:var(--cream);margin:4px 34px 0;padding:16px 24px;border-radius:4px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.cta h3{font-family:'Spectral',serif;font-style:italic;color:var(--cream);font-size:14px;margin-bottom:4px}
+.cta p{color:rgba(233,226,207,.82);font-size:9.4px;max-width:46ch}
+.cta .wa{font-family:'Work Sans',sans-serif;display:inline-block;background:var(--gold);color:var(--green);font-weight:700;font-size:9.6px;padding:9px 15px;border-radius:2px;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+.cta .meta{font-family:'Work Sans',sans-serif;color:var(--cream);font-size:8.8px;margin-top:7px;line-height:1.6}
+.foot{padding:11px 34px 16px;color:var(--muted);font-size:8px;display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:14px}
+.foot .serif{font-family:'Newsreader',serif;color:var(--gold);font-style:italic}
+</style></head><body>
+<div class="page">
+
+  <div class="head">
+    <div class="eyebrow"><a href="/" style="color:var(--gold);text-decoration:none">← The Long Play</a> · Fees &amp; options · Founding cohort 2026</div>
+    <h1>What it costs, and how it works.</h1>
+    <div class="tag">A relationship with music that outlasts the lessons.</div>
+  </div>
+
+  <div class="body">
+    <p class="intro">The Long Play is sold as a year, not by the hour. One fee covers everything in the program — the weekly teaching, the recording, the performances, the portfolio. There are two ways in, depending on how lessons reach your child. Founding families who join this first cohort pay a reduced rate for the first six months.</p>
+
+    <div class="eyebrow-s">Choose how your child takes part</div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="top">
+          <div class="name">Core</div>
+          <div class="price">₹1,20,000<small> / year</small></div>
+          <div class="found">Founding rate: ₹1,00,000 for the first 6 months</div>
+        </div>
+        <div class="who">Your child comes to the studio once a week. The complete year, start to finish.</div>
+        <ul>
+          <li>Weekly one-to-one guitar</li>
+          <li>Songwriting &amp; music production</li>
+          <li>One professionally recorded song</li>
+          <li>Two performances · three jam sessions</li>
+          <li>Monthly Song Pods with other children</li>
+          <li>Digital portfolio + practice-streak tracker</li>
+          <li>The year-end showcase</li>
+        </ul>
+      </div>
+      <div class="tier full">
+        <div class="top">
+          <div class="name">Full <span class="badge">Most chosen</span></div>
+          <div class="price">₹1,80,000<small> / year</small></div>
+          <div class="found">Founding rate: ₹1,50,000 for the first 6 months</div>
+        </div>
+        <div class="who">Akshit comes to your home, or your child attends twice a week. Everything in Core, with more.</div>
+        <ul>
+          <li class="plus">Everything in Core, plus —</li>
+          <li>Home visits, or two sessions a week</li>
+          <li>A second recording in the year</li>
+          <li>An extra production camp</li>
+          <li>Priority scheduling &amp; a parent-jam seat</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="addons">
+        <div class="eyebrow-s">Optional, for either tier</div>
+        <div class="alist">
+          <div class="a"><b>Trinity exam prep &amp; entry</b><span>Rs. 25,000–30,000 / year · taught separately, outside Studio time</span></div>
+          <div class="a"><b>Music video</b><span>A filmed version of the year's recording · on request</span></div>
+          <div class="a"><b>Spotify / SoundCloud release</b><span>Your child's song, published · on request</span></div>
+          <div class="a"><b>Additional recordings</b><span>Beyond the songs included in the year · per song</span></div>
+        </div>
+        <p class="note" style="margin-top:10px">Exams are optional on purpose. The Long Play is built around making music, not passing grades — so exam prep runs as a separate track and never replaces studio time.</p>
+      </div>
+      <div class="terms">
+        <div class="eyebrow-s">Paying for the year</div>
+        <div class="tbox">
+          <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
+          <div class="t"><span>Quarterly</span><b>Four payments</b></div>
+          <div class="t"><span>Monthly</span><b>On request</b></div>
+        </div>
+        <p class="note" style="margin-top:10px">The year runs June–May and is priced across 42 teaching weeks — holidays, festivals and reasonable absences are already built in. No pay-per-class. A small group only: never more than 25 children, 8–10 in this founding cohort.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="l">
+      <h3>Let's find the right fit for your child.</h3>
+      <p>Tell me a little about your child and I'll help you choose between Core and Full — and answer anything about the year. No commitment in a conversation.</p>
+    </div>
+    <div class="r" style="text-align:right">
+      <a class="wa" href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20talk%20about%20The%20Long%20Play%20fees%20for%20my%20child.">Message me on WhatsApp →</a>
+      <div class="meta">Akshit Deshmukh<br>+91 88883 26949 · thelongplay.in</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="serif">A relationship with music that outlasts the lessons.</span>
+    <span>The Long Play · Pune · Fees indicative for the 2026 founding cohort · subject to confirmation in conversation.</span>
+  </div>
+
+</div>
+</body></html>

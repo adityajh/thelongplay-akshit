@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Long Play — a year-long music program for children 7–14 in Pune. A relationship with music that outlasts the lessons. Founder-led by Akshit Deshmukh.">
+  <title>The Long Play — A relationship with music that outlasts the lessons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#0F3D33; --cream:#E9E2CF; --gold:#B8924A; --ink:#3A3A36;
+      --paper:#F4F0E4; --white:#FFFFFF; --muted:#6F6A5E; --wa:#25D366;
+      --serif:'Spectral',Georgia,serif; --sans:'Newsreader',Georgia,serif; --head:'Work Sans',system-ui,sans-serif;
+      --max:1080px; --sp:clamp(16px,4vw,28px);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:var(--serif);line-height:1.12;color:var(--green);font-weight:600}
+    h1{font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:-.02em}
+    h2{font-size:clamp(1.6rem,3.6vw,2.6rem)}
+    h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+    p{max-width:62ch}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp)}
+    section{padding:clamp(56px,9vw,104px) 0}
+    .eyebrow{font-family:var(--head);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+
+    /* nav */
+    nav{position:sticky;top:0;z-index:50;background:rgba(244,240,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(15,61,51,.1)}
+    .nav-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .logo{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green);text-decoration:none;font-weight:600}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{font-family:var(--head);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{background:var(--green);color:var(--cream)!important;padding:9px 18px;border-radius:2px}
+    @media(max-width:680px){.nav-links li:not(:last-child){display:none}}
+
+    /* hero */
+    .hero{position:relative;color:var(--cream);padding:clamp(72px,12vw,150px) 0;overflow:hidden;background:var(--green)}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,61,51,.93) 0%,rgba(15,61,51,.82) 42%,rgba(15,61,51,.55) 100%)}
+    .hero .wrap{position:relative;z-index:1}
+    .hero .eyebrow{color:var(--gold)}
+    .hero h1{color:var(--cream);max-width:16ch}
+    .hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);color:rgba(233,226,207,.82);margin:26px 0 36px;max-width:50ch}
+    .hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem);color:var(--gold);margin-bottom:10px;display:block}
+
+    .btns{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{font-family:var(--head);display:inline-flex;align-items:center;gap:8px;padding:14px 26px;text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;border-radius:2px;transition:.2s}
+    .btn-pri{background:var(--gold);color:var(--green)}
+    .btn-pri:hover{filter:brightness(1.07)}
+    .btn-wa{background:var(--wa);color:#fff}
+    .btn-wa:hover{opacity:.92}
+    .btn-ghost{border:1px solid var(--cream);color:var(--cream)}
+    .btn-ghost:hover{background:var(--cream);color:var(--green)}
+    .btn-ghost-d{border:1px solid var(--green);color:var(--green)}
+    .btn-ghost-d:hover{background:var(--green);color:var(--cream)}
+
+    /* the moment / quote */
+    .moment{background:var(--cream)}
+    .moment blockquote{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--green);line-height:1.3;max-width:20ch;margin:0 auto;text-align:center}
+    .moment .by{text-align:center;color:var(--muted);margin-top:22px;font-size:.95rem}
+
+    /* what it is */
+    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,4vw,40px);margin-top:44px}
+    .card .pic{aspect-ratio:3/4;overflow:hidden;border-radius:3px;margin-bottom:16px;background:var(--cream)}
+    .card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .card:hover .pic img{transform:scale(1.04)}
+    .card h3{margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.98rem}
+    .card .num{font-family:var(--head);color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.12em;display:block;margin-bottom:6px}
+
+    /* full-width band */
+    .band{height:clamp(220px,34vw,420px);overflow:hidden}
+    .band img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+
+    /* year arc */
+    .arc{background:var(--white)}
+    .arc-row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:18px 0;border-bottom:1px solid rgba(58,58,54,.12)}
+    .arc-row:last-child{border-bottom:none}
+    .arc-q{font-family:var(--serif);font-weight:600;color:var(--gold);font-size:1.1rem;white-space:nowrap}
+    .arc-row b{color:var(--green)}
+    .arc-row span{color:var(--muted);font-size:.96rem}
+
+    /* about */
+    .about{background:var(--green);color:var(--cream)}
+    .about h2{color:var(--cream)}
+    .about p{color:rgba(233,226,207,.85);margin-top:18px}
+    .about .lead{font-family:var(--serif);font-size:1.3rem;color:var(--gold);font-style:italic}
+    .about-split{display:grid;grid-template-columns:0.8fr 1.2fr;gap:clamp(28px,5vw,56px);align-items:center}
+    .about-split .pic{aspect-ratio:4/5;overflow:hidden;border-radius:4px}
+    .about-split .pic img{width:100%;height:100%;object-fit:cover}
+    @media(max-width:740px){.about-split{grid-template-columns:1fr}.about-split .pic{max-height:340px}}
+
+    /* proof */
+    .proof{background:var(--paper)}
+    .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px}
+    .q{background:var(--white);padding:30px;border-top:3px solid var(--gold)}
+    .q p{font-family:var(--serif);font-style:italic;color:var(--green);font-size:1.1rem;margin-bottom:14px}
+    .q .who{color:var(--muted);font-size:.86rem}
+
+    /* enrol / cta */
+    .enrol{background:var(--cream);text-align:center}
+    .enrol h2{max-width:18ch;margin:0 auto 16px}
+    .enrol p{color:var(--muted);margin:0 auto 30px;max-width:46ch}
+    .scarcity{font-family:var(--head);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+
+    footer{background:var(--green);color:rgba(233,226,207,.7);padding:56px 0 28px}
+    .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+    .foot-links{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+    .foot-links a{font-family:var(--head);color:rgba(233,226,207,.7);text-decoration:none;font-size:.82rem}
+    .foot-links a:hover{color:var(--gold)}
+    .foot-bottom{border-top:1px solid rgba(233,226,207,.18);margin-top:30px;padding-top:18px;font-size:.76rem;color:rgba(233,226,207,.5)}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap nav-in">
+      <a href="#top" class="logo">The Long Play</a>
+      <ul class="nav-links">
+        <li><a href="#what">The year</a></li>
+        <li><a href="#about">The teacher</a></li>
+        <li><a href="/offers">Fees</a></li>
+        <li><a href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20know%20more%20about%20The%20Long%20Play%20for%20my%20child." class="nav-cta">WhatsApp</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-bg"><img src="img/hero-teaching.jpg" alt="Akshit Deshmukh teaching a small group of children to play guitar in a sunlit room in Pune"></div>
+    <div class="wrap">
+      <p class="eyebrow">A year-long music program · Pune · ages 7–14</p>
+      <h1>A relationship with music that outlasts the lessons.</h1>
+      <p class="sub">The Long Play is one year of real music for your child — guitar, songwriting, and studio-grade recording. Taught by one musician who knows every child by name. Play first. Read later.</p>
+      <div class="btns">
+        <a href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20know%20more%20about%20The%20Long%20Play%20for%20my%20child." class="btn btn-wa">Talk to Akshit on WhatsApp</a>
+        <a href="#what" class="btn btn-ghost">See the year</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- THE MOMENT -->
+  <section class="moment">
+    <div class="wrap">
+      <blockquote>"There's more creativity in doing it myself."</blockquote>
+      <p class="by">— Deana, 11, after closing an AI app that offered to write her a song.<br>The Long Play was built around that sentence.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="wrap" id="what">
+    <p class="eyebrow">What your child actually does</p>
+    <h2>Not a class they attend. A thing they make.</h2>
+    <div class="grid3">
+      <div class="card"><div class="pic"><img src="img/card-play.jpg" alt="A child learning guitar one-to-one with Akshit"></div><span class="num">01 · PLAY</span><h3>They play</h3><p>Weekly one-to-one guitar, built around the music your child wants to play — not a syllabus. Technique and reading arrive later, when the music asks for them.</p></div>
+      <div class="card"><div class="pic"><img src="img/card-make.jpg" alt="Students playing together at a recording and performance session"></div><span class="num">02 · MAKE</span><h3>They make</h3><p>Songwriting and studio-grade production. By the end of the year, your child has a real recording they made themselves — their first record, kept as proof.</p></div>
+      <div class="card"><div class="pic"><img src="img/card-belong.jpg" alt="A group of young musicians playing together outdoors at a Song Pod"></div><span class="num">03 · BELONG</span><h3>They belong</h3><p>Monthly Song Pods with other kids, immersive camps, and a year-end showcase on a real stage. Music becomes something they do with people, for life.</p></div>
+    </div>
+  </section>
+
+  <!-- FULL-WIDTH BAND -->
+  <div class="band"><img src="img/band-community.jpg" alt="Children and teenagers playing guitars together in a circle outdoors at a Long Play jam session in Pune"></div>
+
+  <!-- THE YEAR -->
+  <section class="arc">
+    <div class="wrap">
+      <p class="eyebrow">The year, quarter by quarter</p>
+      <h2 style="margin-bottom:30px;">One year. One song. One musician.</h2>
+      <div class="arc-row"><div class="arc-q">Q1</div><div><b>Orientation &amp; first sounds.</b> <span>Skills assessment, the first Song Pod, the habit of playing.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Q2</div><div><b>Technique &amp; creativity.</b> <span>Chords, improvisation, monthly Song Pods, mini performance recordings.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Q3</div><div><b>Songwriting &amp; production.</b> <span>Original song workshops, music-production basics, a group composition.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Q4</div><div><b>Recording &amp; portfolio.</b> <span>A studio recording of a cover or original; a portfolio your child keeps.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Q5</div><div><b>The showcase.</b> <span>A year-end concert. Public performance, solo and group. The record, finished.</span></div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-split">
+        <div class="pic"><img src="img/about-jam.jpg" alt="Akshit Deshmukh playing guitar with his students at an outdoor session"></div>
+        <div>
+          <p class="eyebrow" style="color:var(--gold)">The teacher</p>
+          <p class="lead">"Music, not just guitar."</p>
+          <h2 style="margin-top:14px;">Taught by one person. Who knows every child by name.</h2>
+          <p>Akshit Deshmukh is a Pune musician who teaches the way he wishes he'd been taught. He dropped out of school, found one teacher who believed in him, and decided to become that teacher. He records and produces from his own studio — so the music your child makes is real, not a toy.</p>
+          <p>He takes a small group, on purpose. The Long Play is built so the studio stands on its own — but for now, it's him, and he wants to know your child.</p>
+          <div class="btns" style="margin-top:28px;">
+            <a href="https://www.youtube.com/@akshitdeshmukh" class="btn btn-ghost">Hear his students</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof">
+    <div class="wrap">
+      <p class="eyebrow">What parents say</p>
+      <h2>Confidence first. The rest follows.</h2>
+      <div class="quotes">
+        <div class="q"><p>"Self-confidence — if you have that, academics you can figure out. We want to see confidence first."</p><p class="who">— A Long Play parent, Pune</p></div>
+        <div class="q"><p>"She won't just play guitar. She should know how to produce, sing, and perform."</p><p class="who">— A Long Play parent, Pune</p></div>
+        <div class="q"><p>"Guitar practice is the first thing she does after school. She runs to it."</p><p class="who">— A Long Play parent, Pune</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENROL -->
+  <section class="enrol" id="parents">
+    <div class="wrap">
+      <p class="scarcity">Founding cohort · 8–10 children · this year</p>
+      <h2>Give your child a year that ends with something real.</h2>
+      <p>The Long Play takes a small group each year — never more than 25 children in total. The founding cohort opens this year, with founding-member pricing for the first six months. Have a conversation with Akshit before you decide anything.</p>
+      <div class="btns" style="justify-content:center;">
+        <a href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20talk%20about%20The%20Long%20Play%20for%20my%20child." class="btn btn-wa">Message Akshit on WhatsApp</a>
+        <a href="/offers" class="btn btn-ghost-d">See fees &amp; options</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-in">
+        <a href="#top" class="logo" style="color:var(--cream)">The Long Play</a>
+        <ul class="foot-links">
+          <li><a href="#what">The year</a></li>
+          <li><a href="#about">The teacher</a></li>
+          <li><a href="https://www.instagram.com/akshit_deshmukh/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@akshitdeshmukh">YouTube</a></li>
+          <li><a href="https://wa.me/918888326949">WhatsApp</a></li>
+        </ul>
+      </div>
+      <p style="font-family:var(--serif);font-style:italic;color:var(--gold);margin-top:24px;">A relationship with music that outlasts the lessons.</p>
+      <div class="foot-bottom">
+        <p>© 2026 The Long Play · Pune, India · thelongplay.in · A music program for children 7–14, led by Akshit Deshmukh.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

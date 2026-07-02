@@ -1,80 +1,136 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Long Play — Fees &amp; Options</title>
-<meta name="description" content="The Long Play — fees and options for the year-long music program for children 7–14 in Pune. Core and Full tiers, founding-cohort rates.">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-@page{size:A4;margin:0}
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--green:#0F3D33;--cream:#E9E2CF;--gold:#B8924A;--ink:#3A3A36;--paper:#F7F4EC;--muted:#6F6A5E;--line:#E2DCCC}
-body{font-family:'Newsreader','Georgia',serif;color:var(--ink);background:#fff;line-height:1.5;font-size:10.4px}
-.head{display:'Work Sans'}
-.page{width:210mm;min-height:297mm;position:relative}
-.head{background:var(--green);color:var(--cream);padding:24px 34px 20px}
-.head .eyebrow{font-family:'Work Sans',sans-serif;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
-.head h1{font-family:'Spectral',serif;font-size:27px;color:var(--cream);line-height:1.06;font-weight:600}
-.head .tag{font-family:'Newsreader',serif;font-style:italic;color:var(--gold);font-size:12px;margin-top:7px}
-.body{padding:18px 34px 0}
-.intro{font-family:'Newsreader',serif;font-size:11.4px;color:var(--green);line-height:1.45;max-width:74ch;margin-bottom:16px}
-.eyebrow-s{font-family:'Work Sans',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:7px}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Long Play — Fees &amp; Options</title>
+  <meta name="description" content="The Long Play — fees and options for the year-long music program for children 7–14 in Pune. Core and Full tiers, founding-cohort rates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#0F3D33; --cream:#E9E2CF; --gold:#B8924A; --ink:#3A3A36;
+      --paper:#F4F0E4; --white:#FFFFFF; --muted:#6F6A5E; --wa:#25D366; --line:#E2DCCC;
+      --serif:'Spectral',Georgia,serif; --sans:'Newsreader',Georgia,serif; --head:'Work Sans',system-ui,sans-serif;
+      --max:1080px; --sp:clamp(16px,4vw,28px);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:var(--serif);line-height:1.12;color:var(--green);font-weight:600}
+    h1{font-size:clamp(2.1rem,5.4vw,3.6rem);letter-spacing:-.02em}
+    h2{font-size:clamp(1.5rem,3.4vw,2.3rem)}
+    h3{font-size:clamp(1.1rem,2vw,1.35rem)}
+    p{max-width:64ch}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp)}
+    section{padding:clamp(44px,7vw,84px) 0}
+    .eyebrow{font-family:var(--head);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
 
-.tiers{display:flex;gap:16px;margin-bottom:16px}
-.tier{flex:1;border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.tier.full{border-color:var(--gold);border-width:1.6px}
-.tier .top{padding:14px 16px 12px;background:var(--paper)}
-.tier.full .top{background:var(--cream)}
-.tier .name{font-family:'Work Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
-.tier .badge{font-family:'Work Sans',sans-serif;float:right;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--gold);padding:3px 7px;border-radius:2px}
-.tier .price{font-family:'Spectral',serif;font-size:26px;color:var(--green);font-weight:600;margin-top:8px}
-.tier .price small{font-family:'Newsreader',serif;font-size:11px;color:var(--muted);font-weight:400}
-.tier .found{font-family:'Work Sans',sans-serif;font-size:8.6px;color:var(--gold);font-weight:600;margin-top:3px;letter-spacing:.02em}
-.tier .who{padding:10px 16px;font-size:9.6px;color:var(--muted);border-bottom:1px solid var(--line);min-height:42px}
-.tier ul{list-style:none;padding:10px 16px 14px}
-.tier li{font-size:9.5px;padding:3px 0 3px 15px;position:relative;color:var(--ink)}
-.tier li::before{content:'\2014';position:absolute;left:0;color:var(--gold)}
-.tier li.plus{color:var(--green);font-weight:500}
+    /* nav (same as home) */
+    nav{position:sticky;top:0;z-index:50;background:rgba(244,240,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(15,61,51,.1)}
+    .nav-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .logo{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green);text-decoration:none;font-weight:600}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{font-family:var(--head);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+    .nav-links a:hover{color:var(--green)}
+    .nav-links a.active{color:var(--green)}
+    .nav-cta{background:var(--green);color:var(--cream)!important;padding:9px 18px;border-radius:2px}
+    @media(max-width:680px){.nav-links li:not(:last-child){display:none}}
 
-.row2{display:flex;gap:22px;margin-bottom:14px}
-.addons{flex:1.25}
-.terms{flex:1}
-.alist{margin-top:6px}
-.alist .a{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:9.7px}
-.alist .a:last-child{border:none}
-.alist .a b{font-family:'Work Sans',sans-serif;color:var(--green);font-weight:600;white-space:nowrap}
-.alist .a span{color:var(--muted)}
-.tbox{background:var(--paper);border-radius:4px;padding:13px 16px}
-.tbox .t{display:flex;justify-content:space-between;padding:5px 0;font-size:9.7px;border-bottom:1px solid var(--line)}
-.tbox .t:last-child{border:none}
-.tbox .t b{font-family:'Work Sans',sans-serif;color:var(--green);font-weight:600}
+    /* header */
+    .top{background:var(--green);color:var(--cream);padding:clamp(52px,9vw,96px) 0 clamp(40px,7vw,72px)}
+    .top .eyebrow{color:var(--gold)}
+    .top h1{color:var(--cream);max-width:18ch}
+    .top .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--gold);margin-top:16px;display:block}
+    .top .intro{color:rgba(233,226,207,.82);font-size:clamp(1rem,1.8vw,1.15rem);margin-top:22px;max-width:60ch}
 
-.note{font-size:9.2px;color:var(--muted);font-style:italic;line-height:1.5;border-left:2px solid var(--gold);padding:2px 0 2px 12px;margin-bottom:14px;max-width:80ch}
+    /* tiers */
+    .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,3vw,28px);margin-top:40px}
+    .tier{background:var(--white);border:1px solid var(--line);border-radius:5px;overflow:hidden;display:flex;flex-direction:column}
+    .tier.full{border-color:var(--gold);border-width:1.6px}
+    .tier .thd{padding:26px 26px 20px;background:var(--paper)}
+    .tier.full .thd{background:var(--cream)}
+    .tier .name{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:flex;justify-content:space-between;align-items:center}
+    .tier .badge{font-family:var(--head);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--green);background:var(--gold);padding:4px 9px;border-radius:2px}
+    .tier .price{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.6rem);color:var(--green);font-weight:600;margin-top:14px;line-height:1}
+    .tier .price small{font-size:.9rem;color:var(--muted);font-weight:400}
+    .tier .found{font-family:var(--head);font-size:.76rem;color:var(--gold);font-weight:600;margin-top:8px}
+    .tier .who{padding:18px 26px;font-size:.98rem;color:var(--muted);border-bottom:1px solid var(--line)}
+    .tier ul{list-style:none;padding:18px 26px 26px;margin:0}
+    .tier li{font-size:.96rem;padding:5px 0 5px 20px;position:relative;color:var(--ink)}
+    .tier li::before{content:'\2014';position:absolute;left:0;color:var(--gold)}
+    .tier li.plus{color:var(--green);font-weight:500;font-family:var(--serif)}
 
-.cta{background:var(--green);color:var(--cream);margin:4px 34px 0;padding:16px 24px;border-radius:4px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.cta h3{font-family:'Spectral',serif;font-style:italic;color:var(--cream);font-size:14px;margin-bottom:4px}
-.cta p{color:rgba(233,226,207,.82);font-size:9.4px;max-width:46ch}
-.cta .wa{font-family:'Work Sans',sans-serif;display:inline-block;background:var(--gold);color:var(--green);font-weight:700;font-size:9.6px;padding:9px 15px;border-radius:2px;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
-.cta .meta{font-family:'Work Sans',sans-serif;color:var(--cream);font-size:8.8px;margin-top:7px;line-height:1.6}
-.foot{padding:11px 34px 16px;color:var(--muted);font-size:8px;display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:14px}
-.foot .serif{font-family:'Newsreader',serif;color:var(--gold);font-style:italic}
-</style></head><body>
-<div class="page">
+    /* two-column blocks */
+    .row2{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,56px);margin-top:8px}
+    @media(max-width:740px){.row2{grid-template-columns:1fr;gap:36px}}
+    .alist{margin-top:10px}
+    .alist .a{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+    .alist .a:last-child{border:none}
+    .alist .a b{font-family:var(--head);color:var(--green);font-weight:600;font-size:.92rem;white-space:nowrap}
+    .alist .a span{color:var(--muted);font-size:.9rem;text-align:right}
+    @media(max-width:460px){.alist .a{flex-direction:column;gap:3px}.alist .a span{text-align:left}}
+    .tbox{background:var(--white);border:1px solid var(--line);border-radius:5px;padding:8px 22px}
+    .tbox .t{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+    .tbox .t:last-child{border:none}
+    .tbox .t b{font-family:var(--head);color:var(--green);font-weight:600;font-size:.9rem;white-space:nowrap}
+    .tbox .t span{color:var(--muted)}
+    .note{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.6;border-left:2px solid var(--gold);padding:4px 0 4px 16px;margin-top:18px;max-width:64ch}
 
-  <div class="head">
-    <div class="eyebrow"><a href="/" style="color:var(--gold);text-decoration:none">← The Long Play</a> · Fees &amp; options · Founding cohort 2026</div>
-    <h1>What it costs, and how it works.</h1>
-    <div class="tag">A relationship with music that outlasts the lessons.</div>
-  </div>
+    /* cta */
+    .cta{background:var(--green);color:var(--cream)}
+    .cta-in{display:flex;justify-content:space-between;align-items:center;gap:clamp(20px,4vw,48px);flex-wrap:wrap}
+    .cta h2{color:var(--cream);font-style:italic;max-width:20ch}
+    .cta p{color:rgba(233,226,207,.82);margin-top:12px;max-width:48ch}
+    .cta .r{text-align:right}
+    @media(max-width:640px){.cta .r{text-align:left}}
+    .btn{font-family:var(--head);display:inline-flex;align-items:center;gap:8px;padding:14px 26px;text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;border-radius:2px;transition:.2s}
+    .btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{opacity:.92}
+    .cta .meta{font-family:var(--head);color:rgba(233,226,207,.72);font-size:.82rem;margin-top:14px;line-height:1.7}
 
-  <div class="body">
-    <p class="intro">The Long Play is sold as a year, not by the hour. One fee covers everything in the program — the weekly teaching, the recording, the performances, the portfolio. There are two ways in, depending on how lessons reach your child. Founding families who join this first cohort pay a reduced rate for the first six months.</p>
+    /* footer (same as home) */
+    footer{background:var(--green);color:rgba(233,226,207,.7);padding:56px 0 28px}
+    .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+    .foot-links{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+    .foot-links a{font-family:var(--head);color:rgba(233,226,207,.7);text-decoration:none;font-size:.82rem}
+    .foot-links a:hover{color:var(--gold)}
+    .foot-bottom{border-top:1px solid rgba(233,226,207,.18);margin-top:30px;padding-top:18px;font-size:.76rem;color:rgba(233,226,207,.5)}
+  </style>
+</head>
+<body>
 
-    <div class="eyebrow-s">Choose how your child takes part</div>
+  <nav>
+    <div class="wrap nav-in">
+      <a href="/" class="logo">The Long Play</a>
+      <ul class="nav-links">
+        <li><a href="/#what">The year</a></li>
+        <li><a href="/#about">The teacher</a></li>
+        <li><a href="/offers" class="active">Fees</a></li>
+        <li><a href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20know%20more%20about%20The%20Long%20Play%20for%20my%20child." class="nav-cta">WhatsApp</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="top">
+    <div class="wrap">
+      <p class="eyebrow">Fees &amp; options · Founding cohort 2026</p>
+      <h1>What it costs, and how it works.</h1>
+      <span class="tag">A relationship with music that outlasts the lessons.</span>
+      <p class="intro">The Long Play is sold as a year, not by the hour. One fee covers everything in the program — the weekly teaching, the recording, the performances, the portfolio. There are two ways in, depending on how lessons reach your child. Founding families who join this first cohort pay a reduced rate for the first six months.</p>
+    </div>
+  </header>
+
+  <!-- TIERS -->
+  <section class="wrap">
+    <p class="eyebrow">Choose how your child takes part</p>
     <div class="tiers">
       <div class="tier">
-        <div class="top">
+        <div class="thd">
           <div class="name">Core</div>
-          <div class="price">₹1,20,000<small> / year</small></div>
+          <div class="price">₹1,20,000 <small>/ year</small></div>
           <div class="found">Founding rate: ₹1,00,000 for the first 6 months</div>
         </div>
         <div class="who">Your child comes to the studio once a week. The complete year, start to finish.</div>
@@ -89,60 +145,80 @@ body{font-family:'Newsreader','Georgia',serif;color:var(--ink);background:#fff;l
         </ul>
       </div>
       <div class="tier full">
-        <div class="top">
+        <div class="thd">
           <div class="name">Full <span class="badge">Most chosen</span></div>
-          <div class="price">₹1,80,000<small> / year</small></div>
+          <div class="price">₹1,80,000 <small>/ year</small></div>
           <div class="found">Founding rate: ₹1,50,000 for the first 6 months</div>
         </div>
-        <div class="who">Akshit comes to your home, or your child attends twice a week. Everything in Core, with more.</div>
+        <div class="who">Two home visits per week. Everything in Core, with more.</div>
         <ul>
           <li class="plus">Everything in Core, plus —</li>
-          <li>Home visits, or two sessions a week</li>
+          <li>Two home visits a week</li>
           <li>A second recording in the year</li>
           <li>An extra production camp</li>
           <li>Priority scheduling &amp; a parent-jam seat</li>
         </ul>
       </div>
     </div>
+  </section>
 
+  <!-- ADD-ONS + TERMS -->
+  <section class="wrap" style="padding-top:0;">
     <div class="row2">
-      <div class="addons">
-        <div class="eyebrow-s">Optional, for either tier</div>
+      <div>
+        <p class="eyebrow">Optional, for either tier</p>
         <div class="alist">
           <div class="a"><b>Trinity exam prep &amp; entry</b><span>Rs. 25,000–30,000 / year · taught separately, outside Studio time</span></div>
           <div class="a"><b>Music video</b><span>A filmed version of the year's recording · on request</span></div>
           <div class="a"><b>Spotify / SoundCloud release</b><span>Your child's song, published · on request</span></div>
           <div class="a"><b>Additional recordings</b><span>Beyond the songs included in the year · per song</span></div>
         </div>
-        <p class="note" style="margin-top:10px">Exams are optional on purpose. The Long Play is built around making music, not passing grades — so exam prep runs as a separate track and never replaces studio time.</p>
+        <p class="note">Exams are optional on purpose. The Long Play is built around making music, not passing grades — so exam prep runs as a separate track and never replaces studio time.</p>
       </div>
-      <div class="terms">
-        <div class="eyebrow-s">Paying for the year</div>
+      <div>
+        <p class="eyebrow">Paying for the year</p>
         <div class="tbox">
           <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
           <div class="t"><span>Quarterly</span><b>Four payments</b></div>
           <div class="t"><span>Monthly</span><b>On request</b></div>
         </div>
-        <p class="note" style="margin-top:10px">The year runs June–May and is priced across 42 teaching weeks — holidays, festivals and reasonable absences are already built in. No pay-per-class. A small group only: never more than 25 children, 8–10 in this founding cohort.</p>
+        <p class="note">The year runs June–May and is priced across 42 teaching weeks — holidays, festivals and reasonable absences are already built in. No pay-per-class. A small group only: never more than 25 children, 8–10 in this founding cohort.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="cta">
-    <div class="l">
-      <h3>Let's find the right fit for your child.</h3>
-      <p>Tell me a little about your child and I'll help you choose between Core and Full — and answer anything about the year. No commitment in a conversation.</p>
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-in">
+      <div class="l">
+        <h2>Let's find the right fit for your child.</h2>
+        <p>Tell me a little about your child and I'll help you choose between Core and Full — and answer anything about the year. No commitment in a conversation.</p>
+      </div>
+      <div class="r">
+        <a class="btn btn-wa" href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20talk%20about%20The%20Long%20Play%20fees%20for%20my%20child.">Message me on WhatsApp →</a>
+        <div class="meta">Akshit Deshmukh<br>+91 88883 26949 · thelongplay.in</div>
+      </div>
     </div>
-    <div class="r" style="text-align:right">
-      <a class="wa" href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20talk%20about%20The%20Long%20Play%20fees%20for%20my%20child.">Message me on WhatsApp →</a>
-      <div class="meta">Akshit Deshmukh<br>+91 88883 26949 · thelongplay.in</div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-in">
+        <a href="/" class="logo" style="color:var(--cream)">The Long Play</a>
+        <ul class="foot-links">
+          <li><a href="/#what">The year</a></li>
+          <li><a href="/#about">The teacher</a></li>
+          <li><a href="https://www.instagram.com/akshit_deshmukh/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@akshitdeshmukh">YouTube</a></li>
+          <li><a href="https://wa.me/918888326949">WhatsApp</a></li>
+        </ul>
+      </div>
+      <p style="font-family:var(--serif);font-style:italic;color:var(--gold);margin-top:24px;">A relationship with music that outlasts the lessons.</p>
+      <div class="foot-bottom">
+        <p>© 2026 The Long Play · Pune, India · thelongplay.in · Fees indicative for the 2026 founding cohort · subject to confirmation in conversation.</p>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <div class="foot">
-    <span class="serif">A relationship with music that outlasts the lessons.</span>
-    <span>The Long Play · Pune · Fees indicative for the 2026 founding cohort · subject to confirmation in conversation.</span>
-  </div>
-
-</div>
-</body></html>
+</body>
+</html>

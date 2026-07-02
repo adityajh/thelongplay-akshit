@@ -37,7 +37,22 @@
     .nav-links a:hover{color:var(--green)}
     .nav-links a.active{color:var(--green)}
     .nav-cta{background:var(--green);color:var(--cream)!important;padding:9px 18px;border-radius:2px}
-    @media(max-width:680px){.nav-links li:not(:last-child){display:none}}
+    .nav-toggle{display:none}
+    .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;margin:-8px}
+    .nav-burger span{display:block;width:24px;height:2px;background:var(--green);border-radius:2px;transition:.25s}
+    .nav-toggle:checked ~ .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle:checked ~ .nav-burger span:nth-child(2){opacity:0}
+    .nav-toggle:checked ~ .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:680px){
+      .nav-in{flex-wrap:wrap}
+      .nav-burger{display:flex}
+      .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding:6px 0 4px}
+      .nav-toggle:checked ~ .nav-links{display:flex}
+      .nav-links li{width:100%}
+      .nav-links a{display:block;width:100%;padding:13px 2px;font-size:.85rem;border-top:1px solid rgba(15,61,51,.1)}
+      .nav-links li:first-child a{border-top:0}
+      .nav-links .nav-cta{margin-top:12px;padding:13px 16px;border-radius:2px;text-align:center}
+    }
 
     /* header */
     .top{background:var(--green);color:var(--cream);padding:clamp(52px,9vw,96px) 0 clamp(40px,7vw,72px)}
@@ -104,6 +119,8 @@
   <nav>
     <div class="wrap nav-in">
       <a href="/" class="logo">The Long Play</a>
+      <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Toggle menu">
+      <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
       <ul class="nav-links">
         <li><a href="/#what">The year</a></li>
         <li><a href="/#about">The teacher</a></li>

@@ -19,7 +19,7 @@
   <style>
     :root{
       --green:#0F3D33; --cream:#E9E2CF; --gold:#B8924A; --ink:#3A3A36;
-      --paper:#F4F0E4; --white:#FFFFFF; --muted:#6F6A5E; --wa:#25D366; --line:#E2DCCC;
+      --paper:#F4F0E4; --white:#FFFFFF; --moss:#5C7A4E; --muted:#6F6A5E; --wa:#25D366; --line:#E2DCCC;
       --serif:'Spectral',Georgia,serif; --sans:'Newsreader',Georgia,serif; --head:'Work Sans',system-ui,sans-serif;
       --max:1080px; --sp:clamp(16px,4vw,28px);
     }
@@ -101,6 +101,31 @@
     .tbox .t b{font-family:var(--head);color:var(--green);font-weight:600;font-size:.9rem;white-space:nowrap}
     .tbox .t span{color:var(--muted)}
     .note{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.6;border-left:2px solid var(--gold);padding:4px 0 4px 16px;margin-top:18px;max-width:64ch}
+
+    /* calendar */
+    .cal{margin-top:26px;border-top:1px solid var(--line)}
+    .cal-row{display:grid;grid-template-columns:104px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .cal-row.qtr{background:linear-gradient(90deg,rgba(15,61,51,.028),transparent 60%)}
+    .cal-m{font-family:var(--head);font-weight:600;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
+    .cal-m span{color:var(--muted);font-weight:400;letter-spacing:.04em}
+    .cal-e{display:flex;flex-wrap:wrap;gap:7px}
+    .ev{font-family:var(--head);font-size:.76rem;line-height:1.35;padding:5px 10px;border-radius:2px;border:1px solid transparent;white-space:nowrap}
+    .ev b{font-weight:600}
+    .ev .dt{opacity:.72;font-weight:400}
+    .ev.w{background:rgba(184,146,74,.13);color:#87692C;border-color:rgba(184,146,74,.34)}
+    .ev.j{background:rgba(92,122,78,.13);color:#405735;border-color:rgba(92,122,78,.32)}
+    .ev.p{background:rgba(15,61,51,.07);color:var(--green);border-color:rgba(15,61,51,.2)}
+    .ev.f{background:var(--gold);color:var(--green);border-color:var(--gold);font-weight:600}
+    .ev.h{background:transparent;color:var(--muted);border-color:var(--line);font-style:italic}
+    .cal-key{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;font-family:var(--head);font-size:.75rem;color:var(--muted)}
+    .cal-note{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;padding:18px 22px;margin-top:24px;max-width:68ch}
+    .cal-note b{font-family:var(--head);display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:7px;font-weight:600}
+    .cal-note p{font-size:.98rem;color:var(--ink);margin:0;max-width:none}
+    .cal-key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:0}
+    @media(max-width:560px){
+      .cal-row{grid-template-columns:1fr;gap:9px;padding:15px 0}
+      .ev{white-space:normal}
+    }
 
     /* cta */
     .cta{background:var(--green);color:var(--cream)}
@@ -203,28 +228,96 @@
     </div>
   </section>
 
-  <!-- ADD-ONS + TERMS -->
+  <!-- THE YEAR -->
+  <section class="wrap" style="padding-top:0;">
+    <p class="eyebrow">The year at a glance · October 2026 – September 2027</p>
+    <h2>What's already in the diary.</h2>
+    <p style="margin-top:14px;">Weekly lessons are arranged directly with you. Everything below is fixed a year in advance and shared by the whole studio, so you can plan around it.</p>
+
+    <div class="cal">
+      <div class="cal-row"><div class="cal-m">Oct <span>2026</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 1</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev p"><b>Song Pod 1</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Dussehra</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Nov <span>2026</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 2</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev p"><b>Song Pod 2</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Diwali · about a week</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Dec <span>2026</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 3</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev j"><b>Jam 1</b> <span class="dt">· 3rd Sat</span></span>
+        <span class="ev p"><b>Song Pod 3</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Christmas &amp; New Year</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Jan <span>2027</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 4</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev p"><b>Song Pod 4</b> <span class="dt">· 4th Sun</span></span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Feb <span>2027</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 5</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev p"><b>Song Pod 5</b> <span class="dt">· 4th Sun</span></span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Mar <span>2027</span></div><div class="cal-e">
+        <span class="ev f"><b>Performance 1</b> <span class="dt">· 2nd Sun, morning</span></span>
+        <span class="ev p"><b>Song Pod 6</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Holi · one day</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Apr <span>2027</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 6</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev j"><b>Jam 2</b> <span class="dt">· 3rd Sat</span></span>
+        <span class="ev p"><b>Song Pod 7</b> <span class="dt">· 4th Sun</span></span></div></div>
+
+      <div class="cal-row"><div class="cal-m">May <span>2027</span></div><div class="cal-e">
+        <span class="ev p"><b>Song Pod 8</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Summer break · about two weeks</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Jun <span>2027</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 7</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev p"><b>Song Pod 9</b> <span class="dt">· 4th Sun</span></span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Jul <span>2027</span></div><div class="cal-e">
+        <span class="ev p"><b>Song Pod 10</b> <span class="dt">· 4th Sun</span></span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Aug <span>2027</span></div><div class="cal-e">
+        <span class="ev w"><b>Workshop 8</b> <span class="dt">· 2nd Sat</span></span>
+        <span class="ev j"><b>Jam 3</b> <span class="dt">· 3rd Sat</span></span>
+        <span class="ev p"><b>Song Pod 11</b> <span class="dt">· 4th Sun</span></span>
+        <span class="ev h">Independence Day</span></div></div>
+
+      <div class="cal-row"><div class="cal-m">Sep <span>2027</span></div><div class="cal-e">
+        <span class="ev f"><b>Year-end showcase</b> <span class="dt">· 2nd Sun</span></span>
+        <span class="ev p"><b>Song Pod 12</b> <span class="dt">· 4th Sun</span></span></div></div>
+    </div>
+
+    <div class="cal-key">
+      <span><i style="background:rgba(184,146,74,.4)"></i>Production workshop · 2 hrs, at the studio</span>
+      <span><i style="background:rgba(92,122,78,.4)"></i>Jam session</span>
+      <span><i style="background:rgba(15,61,51,.22)"></i>Song Pod · small peer group</span>
+      <span><i style="background:var(--gold)"></i>Performance</span>
+      <span><i style="background:transparent;border:1px solid var(--line)"></i>Holiday · studio closed</span>
+    </div>
+
+    <div class="cal-note">
+      <b>Joining part-way through</b>
+      <p>Your child joins in the month you start, and has access to everything above for the twelve months that follow — wherever in the year that happens to begin. The next calendar, October 2027 to September 2028, is published in September 2027.</p>
+    </div>
+    <p class="note">Entry families attend two of the eight production workshops. Core and Full attend all eight. Performances, jams and Song Pods are the same for everyone, at every tier — the shared things are what make it a studio rather than a timetable.</p>
+  </section>
+
+  <!-- PAYING -->
   <section class="wrap" style="padding-top:0;">
     <div class="row2">
-      <div>
-        <p class="eyebrow">Optional, at any tier</p>
-        <div class="alist">
-          <div class="a"><b>Trinity exam prep &amp; entry</b><span>Rs. 25,000–30,000 / year · taught separately, outside lesson time</span></div>
-          <div class="a"><b>Music video</b><span>A filmed version of the year's recording · on request</span></div>
-          <div class="a"><b>Spotify / SoundCloud release</b><span>Your child's song, published · on request</span></div>
-          <div class="a"><b>Additional recordings</b><span>Beyond the songs included in the year · per song</span></div>
-        </div>
-        <p class="note">Exams are optional on purpose. The Long Play is built around making music, not passing grades — so exam prep runs as a separate track and never replaces lesson time.</p>
-      </div>
       <div>
         <p class="eyebrow">Paying for the year</p>
         <div class="tbox">
           <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
           <div class="t"><span>Quarterly</span><b>Four payments</b></div>
-          <div class="t"><span>Monthly</span><b>On request</b></div>
         </div>
-        <p class="note">Lessons run weekly, year-round. The holiday calendar — festivals, breaks, the summer fortnight — is shared in full when you enrol, and it is already built into the fee. Children start at any point in the year and their twelve months run from that day. No pay-per-class. A small group only: never more than 25 children, 8–10 in this founding cohort.</p>
+        <p class="note">Lessons run weekly, year-round, and the holidays above are already built into the fee. No pay-per-class. A small group only: never more than 25 children, and 8–10 in this founding cohort.</p>
       </div>
+      <div></div>
     </div>
   </section>
 

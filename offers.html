@@ -36,7 +36,9 @@
     h3{font-size:clamp(1.1rem,2vw,1.35rem)}
     p{max-width:64ch}
     a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp)}
+        .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp)}
+    section.wrap{padding-top:clamp(44px,6.2vw,78px)}
+    section.wrap.pay{padding-bottom:clamp(44px,6.2vw,78px)}
     section{padding:clamp(44px,7vw,84px) 0}
     .eyebrow{font-family:var(--head);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
 
@@ -77,25 +79,40 @@
     .top .intro{color:rgba(233,226,207,.82);font-size:clamp(1rem,1.8vw,1.15rem);margin-top:22px;max-width:60ch}
 
     /* tiers */
-    .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,3vw,28px);margin-top:40px}
+    .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:clamp(18px,2.4vw,24px);margin-top:30px;align-items:stretch}
     .tier{background:var(--white);border:1px solid var(--line);border-radius:5px;overflow:hidden;display:flex;flex-direction:column}
-    .tier.full{border-color:var(--gold);border-width:1.6px}
-    .tier .thd{padding:26px 26px 20px;background:var(--paper)}
-    .tier.full .thd{background:var(--cream)}
+    .tier.feat{border-color:var(--gold);border-width:1.5px;box-shadow:0 3px 24px rgba(15,61,51,.07)}
+    .tier .thd{padding:24px 24px 20px;background:var(--paper)}
+    .tier.feat .thd{background:var(--cream)}
     .tier .name{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:flex;justify-content:space-between;align-items:center}
-    .tier .badge{font-family:var(--head);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--green);background:var(--gold);padding:4px 9px;border-radius:2px}
+    .tier .badge{font-family:var(--head);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;font-weight:600;color:var(--cream);background:var(--green);padding:4px 10px;border-radius:2px;white-space:nowrap}
     .tier .price{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.6rem);color:var(--green);font-weight:600;margin-top:14px;line-height:1}
     .tier .price small{font-size:.9rem;color:var(--muted);font-weight:400}
     .tier .found{font-family:var(--head);font-size:.76rem;color:var(--gold);font-weight:600;margin-top:8px}
-    .tier .who{padding:18px 26px;font-size:.98rem;color:var(--muted);border-bottom:1px solid var(--line)}
-    .tier ul{list-style:none;padding:18px 26px 26px;margin:0}
-    .tier li{font-size:.96rem;padding:5px 0 5px 20px;position:relative;color:var(--ink)}
-    .tier li::before{content:'\2014';position:absolute;left:0;color:var(--gold)}
-    .tier li.plus{color:var(--green);font-weight:500;font-family:var(--serif)}
+    .tier .who{padding:18px 24px 4px;font-size:.96rem;color:var(--muted);line-height:1.6}
+    .tier ul{list-style:none;padding:10px 24px 24px;margin:0}
+    .tier li{font-size:.95rem;line-height:1.5;padding:6px 0 6px 22px;position:relative;color:var(--ink)}
+    .tier li::before{content:'\2014';position:absolute;left:0;top:6px;color:#BEB8A6}
+        .tier li.new{color:var(--green);font-weight:500}
+    .tier li.new::before{color:var(--gold)}
+    .tier li.sub{color:var(--muted);font-size:.9rem}
+    .tier li.sub::before{color:#CFC9B8}
+    /* venue strip — the studio/home distinction */
+    .where{padding:15px 24px;background:rgba(15,61,51,.055);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .where b{display:block;font-family:var(--head);font-size:.71rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:600}
+    .where span{display:block;margin-top:4px;font-size:.93rem;color:var(--muted)}
+    /* inclusion group labels */
+    .tier ul:not(:last-child){padding-bottom:4px}
+    .tier ul + .inc{padding-top:16px}
+    @media(min-width:761px){.tier .thd{min-height:172px;display:flex;flex-direction:column}}
+    .inc{display:flex;align-items:center;gap:11px;padding:22px 24px 0;font-family:var(--head);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+    .inc::after{content:"";flex:1;height:1px;background:var(--line)}
+    .inc.key{color:var(--green)}
+    .inc.key::after{background:rgba(184,146,74,.55)}
 
     /* two-column blocks */
     .row2{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,56px);margin-top:8px}
-    @media(max-width:740px){.row2{grid-template-columns:1fr;gap:36px}}
+    @media(max-width:740px){.row2{grid-template-columns:1fr;gap:28px}.pay-terms{padding-top:0}}
     .alist{margin-top:10px}
     .alist .a{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
     .alist .a:last-child{border:none}
@@ -107,7 +124,13 @@
     .tbox .t:last-child{border:none}
     .tbox .t b{font-family:var(--head);color:var(--green);font-weight:600;font-size:.9rem;white-space:nowrap}
     .tbox .t span{color:var(--muted)}
-    .note{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.6;border-left:2px solid var(--gold);padding:4px 0 4px 16px;margin-top:18px;max-width:64ch}
+        .note{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.6;border-left:2px solid var(--line);padding:4px 0 4px 16px;margin-top:18px;max-width:64ch}
+    .cal-foot{font-size:.94rem;color:var(--muted);line-height:1.65;margin-top:24px;max-width:72ch}
+    .pay-row{grid-template-columns:1fr 1fr;align-items:start;margin-top:20px}
+    .pay-terms{padding-top:16px}
+    .pay-terms p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:13px;max-width:46ch}
+    .pay-terms p:last-child{margin-bottom:0}
+    .tbox{padding:8px 24px}
 
     /* calendar */
     .cal{margin-top:26px;border-top:1px solid var(--line)}
@@ -124,8 +147,8 @@
     .ev.p{background:rgba(15,61,51,.07);color:var(--green);border-color:rgba(15,61,51,.2)}
     .ev.f{background:var(--gold);color:var(--green);border-color:var(--gold);font-weight:600}
     .ev.h{background:transparent;color:var(--muted);border-color:var(--line);font-style:italic}
-    .cal-key{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;font-family:var(--head);font-size:.75rem;color:var(--muted)}
-    .cal-note{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;padding:18px 22px;margin-top:24px;max-width:68ch}
+    .cal-key{display:flex;flex-wrap:wrap;gap:18px 22px;margin-top:30px;font-family:var(--head);font-size:.75rem;color:var(--muted)}
+    .cal-note{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;padding:20px 24px;margin-top:30px;max-width:68ch}
     .cal-note b{font-family:var(--head);display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:7px;font-weight:600}
     .cal-note p{font-size:.98rem;color:var(--ink);margin:0;max-width:none}
     .cal-key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:0}
@@ -190,30 +213,42 @@
           <div class="name">Entry</div>
           <div class="price">₹80,000 <small>/ year</small></div>
         </div>
-        <div class="who">Your child comes to the studio, once a week. A complete year, with a finished recording at the end of it.</div>
+        <div class="where"><b>At the studio</b><span>Once a week — your child comes to me</span></div>
+        <div class="who">A complete year, with a finished recording at the end of it.</div>
+        <div class="inc">What's included</div>
         <ul>
-          <li>A weekly one-to-one hour at the studio</li>
-          <li>Two of the eight group production workshops</li>
-          <li>One song, properly recorded and published</li>
-          <li>Two performances · three jam sessions</li>
+          <li>A weekly one-to-one hour, at the studio</li>
+          <li>Two of the eight production workshops</li>
+          <li>One song — written, produced, recorded, published</li>
+          <li>Two live performances</li>
+          <li>Three jam sessions through the year</li>
           <li>Monthly Song Pods with the other children</li>
-          <li>Digital portfolio + practice-streak tracker</li>
-          <li>The year-end showcase</li>
+          <li>A digital portfolio of the year</li>
+          <li>Practice-streak tracker</li>
         </ul>
       </div>
 
-      <div class="tier full">
+      <div class="tier feat">
         <div class="thd">
           <div class="name">Core <span class="badge">Where most start</span></div>
           <div class="price">On enquiry</div>
           <div class="found">Founding families keep a reduced rate for their full first year</div>
         </div>
-        <div class="who">I come to you, once a week. The same year, without the trip — and the whole production side of it.</div>
+        <div class="where"><b>At your home</b><span>Once a week — I come to you</span></div>
+        <div class="who">The same year, without the trip — and the whole production side of it.</div>
+        <div class="inc key">Everything in Entry, plus</div>
         <ul>
-          <li class="plus">Everything in Entry, and —</li>
-          <li>A weekly home visit instead of the studio trip</li>
-          <li>All eight production workshops, not two</li>
-          <li>The same recording, performances, Song Pods and portfolio</li>
+          <li class="new">A weekly one-to-one hour, at your home</li>
+          <li class="new">All eight production workshops, not two</li>
+        </ul>
+        <div class="inc">Also included</div>
+        <ul>
+          <li class="sub">One song — written, produced, recorded, published</li>
+          <li class="sub">Two live performances</li>
+          <li class="sub">Three jam sessions through the year</li>
+          <li class="sub">Monthly Song Pods with the other children</li>
+          <li class="sub">A digital portfolio of the year</li>
+          <li class="sub">Practice-streak tracker</li>
         </ul>
       </div>
 
@@ -222,13 +257,24 @@
           <div class="name">Full</div>
           <div class="price">On enquiry</div>
         </div>
-        <div class="who">Twice a week, at home. For the child who has already decided.</div>
+        <div class="where"><b>At your home</b><span>Twice a week — I come to you</span></div>
+        <div class="who">For the child who has already decided.</div>
+        <div class="inc key">Everything in Core, plus</div>
         <ul>
-          <li class="plus">Everything in Core, and —</li>
-          <li>Two home visits a week</li>
-          <li>Songwriting woven into the lessons</li>
-          <li>A second recording — a body of work, not a single</li>
-          <li>First pick of slots and recording dates</li>
+          <li class="new">Two one-to-one hours a week, at your home</li>
+          <li class="new">Songwriting woven into the lessons</li>
+          <li class="new">A second recording — a body of work, not a single</li>
+          <li class="new">First pick of slots and recording dates</li>
+        </ul>
+        <div class="inc">Also included</div>
+        <ul>
+          <li class="sub">All eight production workshops</li>
+          <li class="sub">One song — written, produced, recorded, published</li>
+          <li class="sub">Two live performances</li>
+          <li class="sub">Three jam sessions through the year</li>
+          <li class="sub">Monthly Song Pods with the other children</li>
+          <li class="sub">A digital portfolio of the year</li>
+          <li class="sub">Practice-streak tracker</li>
         </ul>
       </div>
 
@@ -236,7 +282,7 @@
   </section>
 
   <!-- THE YEAR -->
-  <section class="wrap" style="padding-top:0;">
+  <section class="wrap">
     <p class="eyebrow">The year at a glance · October 2026 – September 2027</p>
     <h2>What's already in the diary.</h2>
     <p style="margin-top:14px;">Weekly lessons are arranged directly with you. Everything below is fixed a year in advance and shared by the whole studio, so you can plan around it.</p>
@@ -306,25 +352,27 @@
       <span><i style="background:transparent;border:1px solid var(--line)"></i>Holiday · studio closed</span>
     </div>
 
+    <p class="cal-foot">Entry families attend two of the eight production workshops; Core and Full attend all eight. Performances, jams and Song Pods are the same for everyone, at every tier — the shared things are what make it a studio rather than a timetable.</p>
+
     <div class="cal-note">
       <b>Joining part-way through</b>
       <p>Your child joins in the month you start, and has access to everything above for the twelve months that follow — wherever in the year that happens to begin. The next calendar, October 2027 to September 2028, is published in September 2027.</p>
     </div>
-    <p class="note">Entry families attend two of the eight production workshops. Core and Full attend all eight. Performances, jams and Song Pods are the same for everyone, at every tier — the shared things are what make it a studio rather than a timetable.</p>
   </section>
 
   <!-- PAYING -->
-  <section class="wrap" style="padding-top:0;">
-    <div class="row2">
-      <div>
-        <p class="eyebrow">Paying for the year</p>
-        <div class="tbox">
-          <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
-          <div class="t"><span>Quarterly</span><b>Four payments</b></div>
-        </div>
-        <p class="note">Lessons run weekly, year-round, and the holidays above are already built into the fee. No pay-per-class. A small group only: never more than 25 children, and 8–10 in this founding cohort.</p>
+  <section class="wrap pay">
+    <p class="eyebrow">Paying for the year</p>
+    <div class="row2 pay-row">
+      <div class="tbox">
+        <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
+        <div class="t"><span>Quarterly</span><b>Four payments</b></div>
       </div>
-      <div></div>
+      <div class="pay-terms">
+        <p>Lessons run weekly, year-round, and the holidays above are already built into the fee.</p>
+        <p>No pay-per-class — you are buying the year, not a count of sessions.</p>
+        <p>A small group only: never more than 25 children, and 8–10 in this founding cohort.</p>
+      </div>
     </div>
   </section>
 

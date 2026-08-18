@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The Long Play — a year-long music program for children 7–14 in Pune. A relationship with music that outlasts the lessons. Founder-led by Akshit Deshmukh.">
   <title>The Long Play — A relationship with music that outlasts the lessons</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/img/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
+  <meta name="theme-color" content="#0F3D33">
   <link rel="canonical" href="https://thelongplay.in/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Long Play">
@@ -39,7 +43,10 @@
     /* nav */
     nav{position:sticky;top:0;z-index:50;background:rgba(244,240,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(15,61,51,.1)}
     .nav-in{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px}
-    .logo{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green);text-decoration:none;font-weight:600}
+    .logo{display:block;line-height:0;text-decoration:none}
+    .logo img{height:36px;width:auto;display:block}
+    footer .logo img{height:32px}
+    @media(max-width:680px){.logo img{height:30px}}
     .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
     .nav-links a{font-family:var(--head);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
     .nav-links a:hover{color:var(--green)}
@@ -144,7 +151,7 @@
 
   <nav>
     <div class="wrap nav-in">
-      <a href="#top" class="logo">The Long Play</a>
+      <a href="#top" class="logo" aria-label="The Long Play — home"><img src="/img/logo-lockup.png" alt="The Long Play" width="520" height="112"></a>
       <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Toggle menu">
       <label for="navtoggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
       <ul class="nav-links">
@@ -253,7 +260,7 @@
   <footer>
     <div class="wrap">
       <div class="foot-in">
-        <a href="#top" class="logo" style="color:var(--cream)">The Long Play</a>
+        <a href="#top" class="logo" aria-label="The Long Play — home"><img src="/img/logo-lockup-light.png" alt="The Long Play" width="520" height="112"></a>
         <ul class="foot-links">
           <li><a href="#what">The year</a></li>
           <li><a href="#about">The teacher</a></li>

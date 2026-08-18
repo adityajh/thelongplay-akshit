@@ -29,6 +29,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+    [id]{scroll-margin-top:86px}
     body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
     h1,h2,h3{font-family:var(--serif);line-height:1.12;color:var(--green);font-weight:600}
     h1{font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:-.02em}
@@ -110,9 +111,12 @@
 
     /* year arc */
     .arc{background:var(--white)}
-    .arc-row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:18px 0;border-bottom:1px solid rgba(58,58,54,.12)}
+    .arc-row{display:grid;grid-template-columns:152px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid rgba(58,58,54,.12);align-items:baseline}
     .arc-row:last-child{border-bottom:none}
     .arc-q{font-family:var(--serif);font-weight:600;color:var(--gold);font-size:1.1rem;white-space:nowrap}
+    .note-arc{font-family:var(--head);font-size:.86rem;color:var(--muted);margin-top:26px}
+    .note-arc a{color:var(--green);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)}
+    @media(max-width:560px){.arc-row{grid-template-columns:1fr;gap:5px;padding:16px 0}}
     .arc-row b{color:var(--green)}
     .arc-row span{color:var(--muted);font-size:.96rem}
 
@@ -186,7 +190,7 @@
   </section>
 
   <!-- WHAT IT IS -->
-  <section class="wrap" id="what">
+  <section class="wrap">
     <p class="eyebrow">What your child actually does</p>
     <h2>Not a class they attend. A thing they make.</h2>
     <div class="grid3">
@@ -200,15 +204,17 @@
   <div class="band"><img src="img/band-community.jpg" alt="Children and teenagers playing guitars together in a circle outdoors at a Long Play jam session in Pune"></div>
 
   <!-- THE YEAR -->
-  <section class="arc">
+  <section class="arc" id="what">
     <div class="wrap">
-      <p class="eyebrow">The year, quarter by quarter</p>
-      <h2 style="margin-bottom:30px;">One year. One song. One musician.</h2>
-      <div class="arc-row"><div class="arc-q">Q1</div><div><b>Orientation &amp; first sounds.</b> <span>Skills assessment, the first Song Pod, the habit of playing.</span></div></div>
-      <div class="arc-row"><div class="arc-q">Q2</div><div><b>Technique &amp; creativity.</b> <span>Chords, improvisation, monthly Song Pods, mini performance recordings.</span></div></div>
-      <div class="arc-row"><div class="arc-q">Q3</div><div><b>Songwriting &amp; production.</b> <span>Original song workshops, music-production basics, a group composition.</span></div></div>
-      <div class="arc-row"><div class="arc-q">Q4</div><div><b>Recording &amp; portfolio.</b> <span>A studio recording of a cover or original; a portfolio your child keeps.</span></div></div>
-      <div class="arc-row"><div class="arc-q">Q5</div><div><b>The showcase.</b> <span>A year-end concert. Public performance, solo and group. The record, finished.</span></div></div>
+      <p class="eyebrow">The year</p>
+      <h2 style="margin-bottom:14px;">The year starts when your child starts.</h2>
+      <p style="margin-bottom:30px;">Children join any month. Nothing here is a term you can miss. This is what happens for every child, counted from their first lesson with me.</p>
+      <div class="arc-row"><div class="arc-q">Week 1</div><div><b>The first lesson.</b> <span>The guitar comes out of its case and stays out, where they can see it.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Weeks 2 – 6</div><div><b>They pick their song.</b> <span>The one they want to play by the end of the year.</span></div></div>
+      <div class="arc-row"><div class="arc-q">From month 3</div><div><b>Their first time on a stage.</b> <span>At the next performance in the diary.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Months 5 – 7</div><div><b>We record their song.</b> <span>Finished and put out properly. Their name on it.</span></div></div>
+      <div class="arc-row"><div class="arc-q">Month 12</div><div><b>Everything they made this year, in one place.</b> <span>Then we talk about next year.</span></div></div>
+      <p class="note-arc">The studio's calendar — workshops, jams, Song Pods, performances — is fixed a year ahead. <a href="/offers#calendar">See the year →</a></p>
     </div>
   </section>
 
@@ -247,9 +253,9 @@
   <!-- ENROL -->
   <section class="enrol" id="parents">
     <div class="wrap">
-      <p class="scarcity">Founding cohort · 8–10 children · this year</p>
+      <p class="scarcity">A small group · 8–10 children this year</p>
       <h2>Give your child a year that ends with something real.</h2>
-      <p>The Long Play takes a small group each year — never more than 25 children in total. The founding cohort opens this year, and families who join it keep founding-member pricing for their full first year. Have a conversation with Akshit before you decide anything.</p>
+      <p>I take a small group each year — never more than 25 children, and eight to ten this year. Talk to me before you decide anything.</p>
       <div class="btns" style="justify-content:center;">
         <a href="https://wa.me/918888326949?text=Hi%20Akshit%2C%20I%27d%20like%20to%20talk%20about%20The%20Long%20Play%20for%20my%20child." class="btn btn-wa">Message Akshit on WhatsApp</a>
         <a href="/offers" class="btn btn-ghost-d">See fees &amp; options</a>
@@ -264,6 +270,7 @@
         <ul class="foot-links">
           <li><a href="#what">The year</a></li>
           <li><a href="#about">The teacher</a></li>
+          <li><a href="/policies">How the year works</a></li>
           <li><a href="https://www.instagram.com/akshit_deshmukh/">Instagram</a></li>
           <li><a href="https://www.youtube.com/@akshitdeshmukh">YouTube</a></li>
           <li><a href="https://wa.me/918888326949">WhatsApp</a></li>

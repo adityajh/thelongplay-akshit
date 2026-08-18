@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Long Play — Fees &amp; Options</title>
-  <meta name="description" content="The Long Play — fees and options for the year-long music program for children 7–14 in Pune. Three ways in, from Rs. 80,000 a year. Founding-cohort rates.">
+  <meta name="description" content="The Long Play — fees and options for the year-long music program for children 7–14 in Pune. Three ways in, from Rs. 80,000 a year.">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/img/favicon-512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
@@ -29,6 +29,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+    [id]{scroll-margin-top:86px}
     body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
     h1,h2,h3{font-family:var(--serif);line-height:1.12;color:var(--green);font-weight:600}
     h1{font-size:clamp(2.1rem,5.4vw,3.6rem);letter-spacing:-.02em}
@@ -84,11 +85,10 @@
     .tier.feat{border-color:var(--gold);border-width:1.5px;box-shadow:0 3px 24px rgba(15,61,51,.07)}
     .tier .thd{padding:24px 24px 20px;background:var(--paper)}
     .tier.feat .thd{background:var(--cream)}
-    .tier .name{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:flex;justify-content:space-between;align-items:center}
+    .tier .name{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:flex;justify-content:space-between;align-items:center;min-height:23px}
     .tier .badge{font-family:var(--head);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;font-weight:600;color:var(--cream);background:var(--green);padding:4px 10px;border-radius:2px;white-space:nowrap}
     .tier .price{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.6rem);color:var(--green);font-weight:600;margin-top:14px;line-height:1}
     .tier .price small{font-size:.9rem;color:var(--muted);font-weight:400}
-    .tier .found{font-family:var(--head);font-size:.76rem;color:var(--gold);font-weight:600;margin-top:8px}
     .tier .who{padding:18px 24px 4px;font-size:.96rem;color:var(--muted);line-height:1.6}
     .tier ul{list-style:none;padding:10px 24px 24px;margin:0}
     .tier li{font-size:.95rem;line-height:1.5;padding:6px 0 6px 22px;position:relative;color:var(--ink)}
@@ -104,7 +104,6 @@
     /* inclusion group labels */
     .tier ul:not(:last-child){padding-bottom:4px}
     .tier ul + .inc{padding-top:16px}
-    @media(min-width:761px){.tier .thd{min-height:172px;display:flex;flex-direction:column}}
     .inc{display:flex;align-items:center;gap:11px;padding:22px 24px 0;font-family:var(--head);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--muted)}
     .inc::after{content:"";flex:1;height:1px;background:var(--line)}
     .inc.key{color:var(--green)}
@@ -112,7 +111,7 @@
 
     /* two-column blocks */
     .row2{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,56px);margin-top:8px}
-    @media(max-width:740px){.row2{grid-template-columns:1fr;gap:28px}.pay-terms{padding-top:0}}
+    @media(max-width:740px){.row2{grid-template-columns:1fr;gap:28px}}
     .alist{margin-top:10px}
     .alist .a{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
     .alist .a:last-child{border:none}
@@ -125,12 +124,20 @@
     .tbox .t b{font-family:var(--head);color:var(--green);font-weight:600;font-size:.9rem;white-space:nowrap}
     .tbox .t span{color:var(--muted)}
         .note{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.6;border-left:2px solid var(--line);padding:4px 0 4px 16px;margin-top:18px;max-width:64ch}
+    /* before you write */
+    .know{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+    .know .k{background:var(--white);padding:22px 24px}
+    .know .k b{display:block;font-family:var(--serif);color:var(--green);font-size:1.02rem;font-weight:600;margin-bottom:7px;line-height:1.3}
+    .know .k span{color:var(--muted);font-size:.94rem;line-height:1.6}
+    .more{font-family:var(--head);font-size:.86rem;margin-top:22px}
+    .more a{color:var(--green);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)}
+    .know .k:last-child{grid-column:span 2}
+    @media(max-width:640px){.know .k:last-child{grid-column:auto}}
     .cal-foot{font-size:.94rem;color:var(--muted);line-height:1.65;margin-top:24px;max-width:72ch}
-    .pay-row{grid-template-columns:1fr 1fr;align-items:start;margin-top:20px}
-    .pay-terms{padding-top:16px}
     .pay-terms p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:13px;max-width:46ch}
     .pay-terms p:last-child{margin-bottom:0}
-    .tbox{padding:8px 24px}
+    .tbox{padding:8px 24px;max-width:460px}
+    .pay-note{font-size:.93rem;color:var(--muted);margin-top:16px;max-width:60ch}
 
     /* calendar */
     .cal{margin-top:26px;border-top:1px solid var(--line)}
@@ -196,7 +203,7 @@
   <!-- HEADER -->
   <header class="top">
     <div class="wrap">
-      <p class="eyebrow">Fees &amp; options · Founding cohort 2026</p>
+      <p class="eyebrow">Fees &amp; options · 2026</p>
       <h1>What it costs, and how it works.</h1>
       <span class="tag">A relationship with music that outlasts the lessons.</span>
       <p class="intro">The Long Play is sold as a year, not by the hour. One fee covers everything in the program — the weekly teaching, the production workshops, the recording, the performances, the portfolio. There are three ways in, depending on how lessons reach your child and how far you want to take it. Children start at any point in the year; the twelve months run from the day they begin.</p>
@@ -232,7 +239,6 @@
         <div class="thd">
           <div class="name">Core <span class="badge">Where most start</span></div>
           <div class="price">On enquiry</div>
-          <div class="found">Founding families keep a reduced rate for their full first year</div>
         </div>
         <div class="where"><b>At your home</b><span>Once a week — I come to you</span></div>
         <div class="who">The same year, without the trip — and the whole production side of it.</div>
@@ -282,7 +288,7 @@
   </section>
 
   <!-- THE YEAR -->
-  <section class="wrap">
+  <section class="wrap" id="calendar">
     <p class="eyebrow">The year at a glance · October 2026 – September 2027</p>
     <h2>What's already in the diary.</h2>
     <p style="margin-top:14px;">Weekly lessons are arranged directly with you. Everything below is fixed a year in advance and shared by the whole studio, so you can plan around it.</p>
@@ -360,20 +366,28 @@
     </div>
   </section>
 
+  <!-- BEFORE YOU WRITE -->
+  <section class="wrap">
+    <p class="eyebrow">Before you write to me</p>
+    <h2 style="margin-bottom:26px;">Five things I'd rather you knew now.</h2>
+    <div class="know">
+      <div class="k"><b>You're paying for a year, not for lessons.</b><span>One fee covers all of it — the teaching, the workshops, the recording, the performances, the portfolio.</span></div>
+      <div class="k"><b>Lessons run weekly, all year.</b><span>I publish the holidays before you enrol. They're already in the fee.</span></div>
+      <div class="k"><b>A lesson your child misses isn't made up.</b><span>One won't change the year — what happens between lessons matters more.</span></div>
+      <div class="k"><b>If I cancel, I reschedule.</b><span>Same month, every time. I'm asking your child to show up, so I show up.</span></div>
+      <div class="k"><b>You'll need a guitar and an iPad.</b><span>The iPad is for the production work. Ask me before you buy either.</span></div>
+    </div>
+    <p class="more"><a href="/policies">How the year works, in full →</a></p>
+  </section>
+
   <!-- PAYING -->
   <section class="wrap pay">
     <p class="eyebrow">Paying for the year</p>
-    <div class="row2 pay-row">
-      <div class="tbox">
-        <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
-        <div class="t"><span>Quarterly</span><b>Four payments</b></div>
-      </div>
-      <div class="pay-terms">
-        <p>Lessons run weekly, year-round, and the holidays above are already built into the fee.</p>
-        <p>No pay-per-class — you are buying the year, not a count of sessions.</p>
-        <p>A small group only: never more than 25 children, and 8–10 in this founding cohort.</p>
-      </div>
+    <div class="tbox">
+      <div class="t"><span>Annual, in full</span><b>Best rate · 5% off</b></div>
+      <div class="t"><span>Quarterly</span><b>Four payments</b></div>
     </div>
+    <p class="pay-note">I take a small group — never more than 25 children, and eight to ten this year.</p>
   </section>
 
   <!-- CTA -->
@@ -397,6 +411,7 @@
         <ul class="foot-links">
           <li><a href="/#what">The year</a></li>
           <li><a href="/#about">The teacher</a></li>
+          <li><a href="/policies">How the year works</a></li>
           <li><a href="https://www.instagram.com/akshit_deshmukh/">Instagram</a></li>
           <li><a href="https://www.youtube.com/@akshitdeshmukh">YouTube</a></li>
           <li><a href="https://wa.me/918888326949">WhatsApp</a></li>
@@ -404,7 +419,7 @@
       </div>
       <p style="font-family:var(--serif);font-style:italic;color:var(--gold);margin-top:24px;">A relationship with music that outlasts the lessons.</p>
       <div class="foot-bottom">
-        <p>© 2026 The Long Play · Pune, India · thelongplay.in · Fees indicative for the 2026 founding cohort · subject to confirmation in conversation.</p>
+        <p>© 2026 The Long Play · Pune, India · thelongplay.in · Fees are for the year, confirmed in conversation.</p>
       </div>
     </div>
   </footer>
